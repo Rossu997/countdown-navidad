@@ -1,0 +1,120 @@
+* {
+  box-sizing: border-box;
+  font-family: Bitter, sans-serif;
+}
+
+body {
+  background: url(img/annie-spratt-QKo-op_gR9I-unsplash.jpg) no-repeat;
+  background-size: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+span {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: rgb(101, 39, 39);
+}
+
+h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-top: 4rem;
+  margin-bottom: 0.6rem;
+  color: rgb(59, 93, 59);
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 400;
+  font-style: italic;
+  color: rgb(61, 61, 61);
+}
+
+/************************************/
+
+.c-contador {
+  display: flex;
+  margin-top: 3rem;
+}
+
+.c-contador > * {
+  margin: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.flip-card {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top,
+.bottom,
+.top-flip,
+.bottom-flip {
+  width: 7rem;
+  height: 4rem;
+  line-height: 1;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  border-radius: 0.8rem;
+  margin: 0 0.2rem;
+  font-size: 8rem;
+  font-weight: 800;
+}
+
+.top,
+.top-flip {
+  background-image: linear-gradient(180deg, rgb(225, 225, 225) 0%, rgb(210, 210, 210) 100%);
+  color: rgb(170, 30, 30);
+  box-shadow: inset 0 -2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.bottom,
+.bottom-flip {
+  background-image: linear-gradient(0deg, rgb(225, 225, 225) 0%, rgb(210, 210, 210) 100%);
+  color: rgb(180, 30, 30);
+  align-items: flex-end;
+  
+}
+
+.bottom {
+  box-shadow: inset 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 2px 0 rgba(0, 0, 0, 0.1);
+}
+
+.top-flip {
+  position: absolute;
+  animation: top-flip-animation 250ms ease-in;
+  transform-origin: bottom;
+}
+
+.bottom-flip {
+  bottom: 0;
+  position: absolute;
+  animation: bottom-flip-animation 250ms ease-out 250ms;
+  transform-origin: top;
+  transform: rotateX(90deg);
+}
+
+/************************************/
+
+@keyframes top-flip-animation {
+  100% {
+    transform: rotateX(90deg);
+  }
+}
+
+@keyframes bottom-flip-animation {
+  100% {
+    transform: rotateX(0deg);
+  }
+}
